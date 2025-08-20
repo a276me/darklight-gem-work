@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+  <model>
+    <material tag="mat1" type="Common" component="">
+      <propertyGroup tag="def">
+        <func tag="eta" oper="Piecewise">
+          <set name="arg" value="T"/>
+          <set name="pieces" value="{{'200.0','1600.0','-8.38278E-7+8.35717342E-8*T^1-7.69429583E-11*T^2+4.6437266E-14*T^3-1.06585607E-17*T^4'}}"/>
+        </func>
+        <func tag="Cp" oper="Piecewise">
+          <set name="arg" value="T"/>
+          <set name="pieces" value="{{'200.0','1600.0','1047.63657-0.372589265*T^1+9.45304214E-4*T^2-6.02409443E-7*T^3+1.2858961E-10*T^4'}}"/>
+        </func>
+        <func tag="rho" oper="Analytic">
+          <set name="expr" value="pA*0.02897/8.314/T"/>
+          <set name="args" value="{'pA','T'}"/>
+          <set name="dermethod" value="manual"/>
+          <set name="argders" value="{{'pA','d(pA*0.02897/8.314/T,pA)'},{'T','d(pA*0.02897/8.314/T,T)'}}"/>
+          <set name="argunit" value="{'',''}"/>
+          <set name="plotaxis" value="{'on','on'}"/>
+          <set name="plotfixedvalue" value="{'0','0'}"/>
+          <set name="plotargs" value="{{'pA','0','1'},{'T','0','1'}}"/>
+        </func>
+        <func tag="k" oper="Piecewise">
+          <set name="arg" value="T"/>
+          <set name="pieces" value="{{'200.0','1600.0','-0.00227583562+1.15480022E-4*T^1-7.90252856E-8*T^2+4.11702505E-11*T^3-7.43864331E-15*T^4'}}"/>
+        </func>
+        <func tag="cs" oper="Analytic">
+          <set name="expr" value="sqrt(1.4*287*T)"/>
+          <set name="args" value="{'T'}"/>
+          <set name="dermethod" value="manual"/>
+          <set name="argders" value="{{'T','d(sqrt(1.4*287*T),T)'}}"/>
+          <set name="argunit" value="{''}"/>
+          <set name="plotargs" value="{{'T','0','1'}}"/>
+        </func>
+        <set name="relpermeability" value="{'1','0','0','0','1','0','0','0','1'}"/>
+        <set name="relpermittivity" value="{'1','0','0','0','1','0','0','0','1'}"/>
+        <set name="dynamicviscosity" value="eta(T[1/K])[Pa*s]"/>
+        <set name="ratioofspecificheat" value="1.4"/>
+        <set name="electricconductivity" value="{'0[S/m]','0','0','0','0[S/m]','0','0','0','0[S/m]'}"/>
+        <set name="heatcapacity" value="Cp(T[1/K])[J/(kg*K)]"/>
+        <set name="density" value="rho(pA[1/Pa],T[1/K])[kg/m^3]"/>
+        <set name="thermalconductivity" value="{'k(T[1/K])[W/(m*K)]','0','0','0','k(T[1/K])[W/(m*K)]','0','0','0','k(T[1/K])[W/(m*K)]'}"/>
+        <set name="soundspeed" value="cs(T[1/K])[m/s]"/>
+        <addInput quantity="temperature"/>
+        <addInput quantity="pressure"/>
+      </propertyGroup>
+      <propertyGroup tag="RefractiveIndex" descr="Refractive index">
+        <set name="n" value="{'1','0','0','0','1','0','0','0','1'}"/>
+      </propertyGroup>
+      <label label="Air"/>
+      <set name="family" value="air"/>
+    </material>
+    <material tag="mat2" type="Common" component="">
+      <propertyGroup tag="def">
+        <func tag="CTE" oper="Piecewise">
+          <set name="arg" value="T"/>
+          <set name="pieces" value="{{'80.0','380.0','9.741443E-6+2.13708E-7*T^1-5.225347E-10*T^2+4.893412E-13*T^3'}}"/>
+        </func>
+        <set name="CTE" value="CTE(T[1/K])[1/K]"/>
+        <set name="relpermittivity" value="{'4','0','0','0','4','0','0','0','4'}"/>
+        <addInput quantity="temperature"/>
+      </propertyGroup>
+      <label label="PCB"/>
+    </material>
+    <material tag="mat3" type="Common" component="">
+      <propertyGroup tag="linzRes" descr="Linearized resistivity">
+        <set name="rho0" value="1.72e-8[ohm*m]"/>
+        <set name="alpha" value="3.9e-3[1/K]"/>
+        <set name="Tref" value="273.15[K]"/>
+        <addInput quantity="temperature"/>
+      </propertyGroup>
+      <label label="Copper"/>
+      <set name="family" value="copper"/>
+      <propertyGroup tag="def">
+        <set name="relpermeability" value="{'1','0','0','0','1','0','0','0','1'}"/>
+        <set name="electricconductivity" value="{'5.998e7[S/m]','0','0','0','5.998e7[S/m]','0','0','0','5.998e7[S/m]'}"/>
+        <set name="heatcapacity" value="385[J/(kg*K)]"/>
+        <set name="relpermittivity" value="{'1','0','0','0','1','0','0','0','1'}"/>
+        <set name="emissivity" value="0.5"/>
+        <set name="density" value="8700[kg/m^3]"/>
+        <set name="thermalconductivity" value="{'400[W/(m*K)]','0','0','0','400[W/(m*K)]','0','0','0','400[W/(m*K)]'}"/>
+      </propertyGroup>
+    </material>
+  </model>
+</archive>
+

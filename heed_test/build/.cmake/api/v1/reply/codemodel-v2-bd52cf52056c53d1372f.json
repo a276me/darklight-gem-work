@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Gem",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "gem_hole::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gem_hole-f24f86ae08353ba84585.json",
+					"name" : "gem_hole",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "quick::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-quick-618972cf2fe5a9bfa12d.json",
+					"name" : "quick",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sim::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sim-36826fd035af13523e52.json",
+					"name" : "sim",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/a276me/Desktop/Dev/darklight/shower_sims/heed_test/build",
+		"source" : "/Users/a276me/Desktop/Dev/darklight/shower_sims/heed_test"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
