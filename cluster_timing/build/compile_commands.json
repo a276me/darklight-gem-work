@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/a276me/Desktop/Dev/darklight/cluster_timing/build",
+  "command": "/usr/bin/clang++ -DROOT_SUPPORT_CLAD -isystem /Users/a276me/Desktop/Dev/darklight/garfield/garfield_install/include -isystem /opt/homebrew/include/root -isystem /opt/local/include -isystem /opt/homebrew/opt/libomp/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.3 -Xclang -fopenmp -std=gnu++17 -o CMakeFiles/Gem.dir/gem.C.o -c /Users/a276me/Desktop/Dev/darklight/cluster_timing/gem.C",
+  "file": "/Users/a276me/Desktop/Dev/darklight/cluster_timing/gem.C"
+}
+]
